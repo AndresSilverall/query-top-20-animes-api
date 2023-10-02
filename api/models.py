@@ -38,6 +38,10 @@ class TopAnime(models.Model):
     )
 
 
+    def __str__(self):
+        return self.title
+
+
 class Mangaka(models.Model):
     anime = models.ForeignKey(
         TopAnime, on_delete=models.CASCADE,
