@@ -43,8 +43,37 @@ class TopAnime(models.Model):
 
 
 class Mangaka(models.Model):
+
+    class ReviewAnime(models.TextChoices):
+
+        ONE = "1", "one",
+        TWO = "2", "two"
+        THREE = "3" "three"
+        FOUR = "4", "four"
+        FIVE = "5", "five"
+        SIX = "6", "six"
+        SEVEN = "7", "seven"
+        EIGHT = "8", "eight"
+        NINE = "9", "nine"
+        TEN = "10", "ten"
+
     anime = models.ForeignKey(
         TopAnime, on_delete=models.CASCADE,
         related_name="Authors",
         null=True
     )
+
+    mangaka = models.CharField(
+        max_length=20,
+        null=True
+    )
+
+    review = models.CharField(
+        choices=ReviewAnime.choices,
+        null=True,
+        max_length=6
+    )
+
+
+    def __str__(self):
+        return str(self.anime.title)
