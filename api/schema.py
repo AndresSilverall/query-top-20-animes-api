@@ -1,6 +1,7 @@
 import graphene
 from api.models import TopAnime, Mangaka
 from api.types import TopAnimeType, MangakaType
+from api.mutations import EditTopAnimeMutation
 
 
 class Query(graphene.ObjectType):
@@ -31,5 +32,8 @@ class Query(graphene.ObjectType):
             return "Mangaka not found!"
     
 
+class Mutation(graphene.ObjectType):
+    add_anime = EditTopAnimeMutation.Field()
 
-schema = graphene.Schema(query=Query) 
+
+schema = graphene.Schema(query=Query, mutation=Mutation) 
