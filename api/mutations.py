@@ -13,12 +13,11 @@ class EditTopAnimeMutation(graphene.Mutation):
         magazine = graphene.String()
         is_active = graphene.Int()
 
-    top_anime = graphene.Field(MangakaType)
+    top_anime = graphene.Field(TopAnimeType)
 
 
-    def mutate(self, id, title, genre, description, year, magazine, is_active):
+    def mutate(self, info, title, genre, description, year, magazine, is_active):
         top_anime = TopAnime.objects.create(
-            id=id,
             genre=genre,
             title=title,
             description=description,
@@ -29,3 +28,6 @@ class EditTopAnimeMutation(graphene.Mutation):
         top_anime.save()
 
         return EditTopAnimeMutation(top_anime=top_anime)
+
+    def update_anime(self, info, id):
+        pass
