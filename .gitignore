@@ -1,0 +1,11 @@
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Registros de errores y archivos de registro
+logs/
+*.log
+
+# Archivos de caché
+*.cache

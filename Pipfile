@@ -13,6 +13,6 @@ graphene-django = "*"
 python_version = "3.8"
 
 [scripts]
-run = "python manage.py run server 8000"
+server = "python manage.py runserver 127.0.0.1:8000"
 make = "python manage.py makemigrations"
 migrate = "python manage.py migrate"
