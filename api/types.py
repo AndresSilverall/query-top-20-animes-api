@@ -20,4 +20,4 @@ class TopAnimeType(DjangoObjectType):
 class MangakaType(DjangoObjectType):
     class Meta:
         model = Mangaka
-        fields = ("id", "anime")
+        fields = ("id", "anime", "magaka", "review")
