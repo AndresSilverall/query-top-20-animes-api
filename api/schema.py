@@ -1,7 +1,10 @@
 import graphene
 from api.models import TopAnime, Mangaka
 from api.types import TopAnimeType, MangakaType
-from api.mutations import AddTopAnimeMutation, UpdateTopAnimeMutation
+from api.mutations import (AddTopAnimeMutation, 
+                           UpdateTopAnimeMutation, 
+                           DeleteTopAnimeMutation
+                        )
 
 
 class Query(graphene.ObjectType):
@@ -35,6 +38,7 @@ class Query(graphene.ObjectType):
 class Mutations(graphene.ObjectType):
     add_anime = AddTopAnimeMutation.Field()
     update_anime = UpdateTopAnimeMutation.Field()
+    delete_anime = DeleteTopAnimeMutation.Field()
 
 
 schema = graphene.Schema(query=Query, mutation=Mutations) 

@@ -59,3 +59,18 @@ class UpdateTopAnimeMutation(graphene.Mutation):
         update_anime.save()
 
         return UpdateTopAnimeMutation(update_anime=update_anime)
+    
+
+class DeleteTopAnimeMutation(graphene.Mutation):
+    class Arguments: 
+        id = graphene.Int()
+
+    delete_anime = graphene.Field(TopAnimeType)
+
+    
+    def mutate(self, info, id):
+        delete_anime = TopAnime.objects.get(id=id)
+        delete_anime.delete()
+        return DeleteTopAnimeMutation(delete_anime=delete_anime)
+
+    
