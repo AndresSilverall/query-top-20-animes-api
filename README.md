@@ -6,6 +6,7 @@ Api basada en la arquitectura de GraphQL, en la que el usuario puede consultar e
 
 
 # Tecnologías usadas
+
 - Python versión 3.8.5
 - Django rest framework versión 3.14.0
 - IDE (Visual studio code)
@@ -92,8 +93,8 @@ Al ser una API basada en GraphQL todos los recursos se acceden desde un unico en
 
 ![get_anime_detail](assets/get_anime_detail.gif)
 
-#### Almacenar un anime en la Base de datos.
 
+#### Almacenar un anime en la Base de datos.
 
 ![add_anime](assets/add_anime.gif)
 
