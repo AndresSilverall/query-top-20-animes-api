@@ -32,15 +32,30 @@ class AddTopAnimeMutation(graphene.Mutation):
         return AddTopAnimeMutation(top_anime=top_anime)
 
 
-    def update_anime(self, info, id, title, genre, description, year, magazine, is_active ):
+class UpdateTopAnimeMutation(graphene.Mutation):
+    class Arguments: 
+        id = graphene.Int()
+        title = graphene.String()
+        genre = graphene.String()
+        description = graphene.String()
+        year = graphene.Int()
+        magazine = graphene.String()
+        is_active = graphene.Int()
+        episode = graphene.Int()
 
-        top_anime = TopAnime.objects.get(id=id)
-        top_anime.title = title
-        top_anime.genre = genre
-        top_anime.description = description
-        top_anime.year = year
-        top_anime.magazine = magazine
-        top_anime.is_active = is_active
-        top_anime.save()
+    update_anime = graphene.Field(TopAnimeType)
 
-        return AddTopAnimeMutation(top_anime=top_anime)
+
+    def mutate(self, info, id, title, genre, description, year, magazine, is_active, episode):
+        update_anime = TopAnime.objects.get(id=id)
+        update_anime.title = title
+        update_anime.description = description
+        update_anime.genre = genre
+        update_anime.year = year
+        update_anime.magazine = magazine
+        update_anime.is_active = is_active
+        update_anime.episode = episode
+
+        update_anime.save()
+
+        return UpdateTopAnimeMutation(update_anime=update_anime)

@@ -1,7 +1,7 @@
 import graphene
 from api.models import TopAnime, Mangaka
 from api.types import TopAnimeType, MangakaType
-from api.mutations import EditTopAnimeMutation
+from api.mutations import AddTopAnimeMutation, UpdateTopAnimeMutation
 
 
 class Query(graphene.ObjectType):
@@ -30,15 +30,11 @@ class Query(graphene.ObjectType):
             return Mangaka.objects.get(id=mangaka_id)
         except Mangaka.DoesNotExist:
             return "Mangaka not found!"
-    
-
-class Mutation(graphene.ObjectType):
-    add_anime = EditTopAnimeMutation.Field()
-    delete_anime = EditTopAnimeMutation.Field()
-
-    def resolve_delete_anime(self, info, id):
-        anime = TopAnime.objects.get(id=id)
-        anime.delete()
 
 
-schema = graphene.Schema(query=Query, mutation=Mutation) 
+class Mutations(graphene.ObjectType):
+    add_anime = AddTopAnimeMutation.Field()
+    update_anime = UpdateTopAnimeMutation.Field()
+
+
+schema = graphene.Schema(query=Query, mutation=Mutations) 
