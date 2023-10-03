@@ -51,7 +51,7 @@ test = "python manage.py test"
 
 # API GraphQL demo
 
-Al ser una API basada en GraphQL todos los recursos se acceden desde un unico endpoint: `api/anime/graphql/`
+Al ser una API basada en GraphQL todos los recursos se acceden desde un unico endpoint: `/api/anime/graphql/`
 
 <table style="border-collapse: collapse; width: 100%;">
     <tr>
@@ -61,6 +61,7 @@ Al ser una API basada en GraphQL todos los recursos se acceden desde un unico en
     </tr>
     <tr>
       <td style="border: 1px solid black;"><code>GET</code></td>
+      <td style="border: 1px solid black;"><code>/api/anime/graphql/</code></td>
       <td style="border: 1px solid black;">Obtener todos los animes almacenadas en la BD.</td>
     </tr>
     <tr>
