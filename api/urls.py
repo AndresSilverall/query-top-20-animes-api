@@ -3,6 +3,6 @@ from graphene_django.views import GraphQLView
 
 
 urlpatterns = [
-    path("graphql/", GraphQLView.as_view(graphiql=True)),
+    path("api/anime/graphql/", GraphQLView.as_view(graphiql=True)),
   
 ]
