@@ -65,4 +65,19 @@ Al ser una API basada en GraphQL todos los recursos se acceden desde un unico en
       <td style="border: 1px solid black;">Obtener todos los animes almacenadas en la BD.</td>
     </tr>
     <tr>
+      <td style="border: 1px solid black;"><code>POST</code></td>
+      <td style="border: 1px solid black;"><code>/api/anime/graphql/</code></td>
+      <td style="border: 1px solid black;">Agregar un anime a la BD.</td>
+    </tr>
+    <tr>
+      <td style="border: 1px solid black;"><code>PUT</code></td>
+      <td style="border: 1px solid black;"><code>/api/anime/graphql/</code></td>
+      <td style="border: 1px solid black;">Actualizar un anime a través de su ID (primary key).</td>
+    </tr>
+    <tr>
+      <td style="border: 1px solid black;"><code>DELETE</code></td>
+      <td style="border: 1px solid black;"><code>/api/anime/graphql/</code></td>
+      <td style="border: 1px solid black;">Eliminar un anime a través de su ID (primary key).</td>
+    </tr>
+    <tr>
 </table>
