@@ -6,7 +6,6 @@ Api basada en la arquitectura de GraphQL, en la que el usuario puede consultar e
 
 
 # Tecnologías usadas
-
 - Python versión 3.8.5
 - Django rest framework versión 3.14.0
 - IDE (Visual studio code)
