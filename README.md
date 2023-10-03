@@ -49,7 +49,7 @@ test = "python manage.py test"
 - Ejecutar pruebas de software con Unit testing `pipenv run test`
 
 
-# API GraphQL demo
+# Métodos establecidos para la API
 
 Al ser una API basada en GraphQL todos los recursos se acceden desde un unico endpoint: `/api/anime/graphql/`
 
@@ -81,3 +81,29 @@ Al ser una API basada en GraphQL todos los recursos se acceden desde un unico en
     </tr>
     <tr>
 </table>
+
+# Demo de API
+
+#### Obtener titulo, descripción y género de todos los animes almacenados en la BD
+
+![get_animes](assets/get_animes.gif)
+
+
+#### Obtener titulo, descripción, género y revista de un anime en especifico
+
+![get_anime_detail](assets/get_anime_detail.gif)
+
+#### Almacenar un anime en la Base de datos.
+
+
+![add_anime](assets/add_anime.gif)
+
+
+#### Actualizar datos de un anime.
+
+![update_anime](assets/update_anime.gif)
+
+
+#### Eliminar anime.
+
+![delete_anime](assets/delete_anime.gif)

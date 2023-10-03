@@ -38,7 +38,9 @@ class Query(graphene.ObjectType):
 class Mutations(graphene.ObjectType):
     add_anime = AddTopAnimeMutation.Field()
     update_anime = UpdateTopAnimeMutation.Field()
-    delete_anime = DeleteTopAnimeMutation.Field()
+    delete_anime = DeleteTopAnimeMutation.Field(TopAnime,
+        description="delete anime with the ID."
+    )
 
 
 schema = graphene.Schema(query=Query, mutation=Mutations) 
